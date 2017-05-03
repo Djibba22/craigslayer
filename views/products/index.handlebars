@@ -1,0 +1,69 @@
+<h1>CraigSlayer</h1>
+
+{{#if username}}
+  Welcome {{username}}! Add Some Products.
+{{/if}}
+
+{{#unless logged_in}}
+  <p> Sign up to add your Products!! </p>
+{{/unless}}
+
+{{#if logged_in}}
+  <h2>Add a Product</h2>
+
+  <form class="create-update-form" action="cats/create" method="POST">
+
+    <div class="form-group">
+      <label for="ca">Product Name:</label>
+      <input type="text" id="ca" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="slee">Sold?</label><br>
+      <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
+      <input type="radio" name="sleepy" value="0"> Awake
+    </div>
+
+    <button type="submit">Add Cat</button>
+  </form>
+{{/if}}
+
+
+
+<h2>Products that are not sold!</h2>
+
+<ul>
+  {{#each products}}
+    {{#unless this.sold}}
+      <li>
+        {{this.name}} - owned by {{this.User.email}}
+
+        <form action="products/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="sold" value="true">
+          <button type="submit">GET IT SOLD!</button>
+        </form>
+
+        {{> products/delete-products}}
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Products that are sold!</h2>
+
+<ul>
+  {{#each products}}
+    {{#if this.sold}}
+      <li>
+        {{this.name}} - owned by {{this.User.email}}
+
+        <form action="products/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="sold" value="false">
+          <button type="submit">SOLD!</button>
+        </form>
+
+        {{> products/delete-product}}
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>

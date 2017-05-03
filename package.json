@@ -1,0 +1,43 @@
+{
+  "name": "craigslayer",
+  "version": "1.0.0",
+  "description": "used items sales inventory tracker with node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine",
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Djibba22/craigslayer.git"
+  },
+  "keywords": [
+    "for",
+    "sale",
+    "used",
+    "node",
+    "tracking",
+    "inventory"
+  ],
+  "author": "John Dinsmore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Djibba22/craigslayer/issues"
+  },
+  "homepage": "https://github.com/Djibba22/craigslayer#readme",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.14.1",
+    "handlebars": "^4.0.5",
+    "method-override": "^2.3.6",
+    "morgan": "^1.7.0",
+    "mysql": "^2.11.1",
+    "path": "^0.12.7",
+    "sequelize": "^3.24.4",
+    "serve-favicon": "^2.3.0"
+  }
+}
