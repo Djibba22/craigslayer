@@ -1,32 +1,30 @@
-<h1>CraigSlayer</h1>
 
 {{#if username}}
   Welcome {{username}}! Add Some Products.
 {{/if}}
 
 {{#unless logged_in}}
-  <p> Sign up to add your Products!! </p>
+  <p> Create an Account to track your used goods!!</p>
 {{/unless}}
 
 {{#if logged_in}}
   <h2>Add a Product</h2>
 
-  <form class="create-update-form" action="cats/create" method="POST">
+  <form class="create-update-form" action="/create" method="POST">
 
     <div class="form-group">
-      <label for="ca">Product Name:</label>
-      <input type="text" id="ca" name="name">
+      <label for="product">Product Name:</label>
+      <input type="text" id="product" name="name">
     </div>
 
     <div class="form-group">
-      <label for="slee">Sold?</label><br>
-      <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-      <input type="radio" name="sleepy" value="0"> Awake
+      <label for="sold">Sold?</label><br>
+      <input type="radio" name="sold" value="1" checked> Sold!<br>
+      <input type="radio" name="sold" value="0"> Not Sold
     </div>
 
-    <button type="submit">Add Cat</button>
+    <button type="submit">Add Product</button>
   </form>
-{{/if}}
 
 
 
@@ -67,3 +65,4 @@
     {{/if}}
   {{/each}}
 </ul>
+{{/if}}

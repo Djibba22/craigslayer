@@ -39,7 +39,7 @@ app.use(session({ secret: 'app', cookie: { maxAge: 60000 }, resave: true, saveUn
 app.use(cookieParser());
 
 // override with POST having ?_method=DELETE
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'

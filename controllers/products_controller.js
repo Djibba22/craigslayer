@@ -30,7 +30,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/create', function (req, res) {
-
+    console.log("create route fired off!!!",req.body);
   // SOLUTION:
   // =========
   // use the Cat model to create a cat based on what's

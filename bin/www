@@ -27,6 +27,8 @@ app.set('port', process.env.PORT || 3000);
 models.sequelize.sync().then(function () {
 	// set our app to listen to the port we set above
   var server = app.listen(app.get('port'), function() {
+    //log out to the console
+    console.log('Express server listening on port ' + server.address().port);
   	// then save a log of the listening to our debugger.
     debug('Express server listening on port ' + server.address().port);
   });
